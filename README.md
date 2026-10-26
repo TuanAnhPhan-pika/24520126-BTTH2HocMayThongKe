@@ -124,10 +124,9 @@ Sử dụng các chỉ số Accuracy, Precision, Recall và F1-score. Classifica
 
 ## 6. Lưu ý
 
-Khi dùng Logistic Regression tự viết để phân loại hai chữ số khác, ví dụ `3` và `5`, cần ánh xạ nhãn về `0` và `1` trước khi huấn luyện, sau đó ánh xạ ngược kết quả dự đoán.
-
-Một số lỗi thường gặp:
-
-- `FileNotFoundError`: kiểm tra tên và vị trí các file dữ liệu MNIST.
-- `ModuleNotFoundError`: kiểm tra Python Interpreter và cài đặt thư viện trong đúng môi trường ảo.
-- VS Code chạy `tempCodeRunnerFile.py`: bỏ bôi đen code và chọn **Run Python File in Terminal**, hoặc chạy trực tiếp bằng các lệnh trên.
+- Đặt đầy đủ bốn file dữ liệu MNIST đúng tên trong thư mục `data` trước khi chạy chương trình.
+- Sử dụng Python trong môi trường `.venv` và cài thư viện bằng chính interpreter đó.
+- Logistic Regression sử dụng hai lớp `0`, `1`; Softmax Regression sử dụng đủ 10 lớp từ `0` đến `9`.
+- Chỉ sử dụng tập train để huấn luyện; các chỉ số trong classification report được tính trên tập test.
+- Tham số `--train-limit` chỉ dùng để chạy thử nhanh. Khi đánh giá kết quả chính thức, bỏ tham số này để huấn luyện trên toàn bộ tập train.
+- Nếu Scikit-learn báo chưa hội tụ, tăng số vòng lặp bằng tham số `--max-iter` khi chạy `sklearn_assignment.py`.
